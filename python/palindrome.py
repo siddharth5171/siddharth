@@ -1,12 +1,14 @@
-def twosum(text):
-    left=0
-    right=len(text)-1
+num = int(input("Enter number: "))
 
-    while left<right:
-        if text[left]!=text[right]:
-            return False 
-        left+=1
-        right-=1
-    return True 
-print(twosum("nitin"))
-print(twosum("madam"))
+original = num
+reverse = 0
+
+while num > 0:
+    digit = num % 10
+    reverse = reverse * 10 + digit
+    num = num // 10
+
+if original == reverse:
+    print("Palindrome")
+else:
+    print("Not Palindrome")
